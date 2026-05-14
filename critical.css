@@ -1,0 +1,585 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body.ekwa-body {
+  font-family: var(--mobile_body);
+  font-weight: var(--mobile_variant);
+  font-style: var(--mobile_style);
+  font-size: var(--body-font-size);
+  color: var(--body-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  overflow-y: hidden !important;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.editor-styles-wrapper .ekawa-theme-header ul {
+  list-style: none !important;
+}
+
+.hide-from-mobile {
+  display: none;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none !important;
+  background-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+
+  font-weight: normal;
+}
+
+.ekwa-body h1 {
+  color: var(--heading_h1_color);
+  font-size: var(--heading-h1-size);
+}
+
+.ekwa-body h2 {
+  color: var(--heading_h2_color);
+  font-size: var(--heading-h2-size);
+}
+
+.ekwa-body h3 {
+  color: var(--heading_h3_color);
+  font-size: var(--heading-h3-size);
+}
+
+.center-vertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center-horizontal {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background: var(--color_two);
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
+  transition: 300ms all;
+  text-transform: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+    overflow: hidden;
+  isolation: isolate; 
+}
+
+.btn-full {
+  max-width: none;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  left: -700%;
+  width: 50%;
+  height: 100%;
+
+  background: -webkit-linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  background: var(--color_one);
+  color: #fff;
+}
+
+ .btn:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+.btn.btn-secondary {
+  background: var(--color_two);
+  border: 1px solid var(--color_two);
+}
+
+.btn.btn-secondary:hover {
+  background: var(--color_three);
+}
+
+.inner-list {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+}
+
+.inner-list li {
+  list-style-type: none;
+  text-indent: -1.2em;
+  Line-height: 30px;
+  Padding-bottom: 10px;
+}
+
+.inner-list li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f058";
+  margin-right: 5px;
+  font-weight: 700;
+}
+
+ 
+a {
+  color: var(--color_one);
+  transition-duration: 0.5s;
+}
+.inner-page a{
+  font-weight: 700;
+}
+a:hover {
+  color: var(--color_three);
+  transition-duration: 0.5s;
+}
+
+.home-page h1,
+.home-page h2,
+.inner-page h1,
+.inner-page h2,
+.blog-single .blog-content h2,
+.blog-role h1 {
+  line-height: 1.1;
+  font-size: 36px !important;
+  color: var(--color_three) !important;
+  font-weight: 700;
+}
+
+.chatprompt {
+  bottom: 165px !important;
+}
+
+.faq-bg-one {
+  background: var(--color_two);
+}
+
+.inner-starting {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.faq-sec {
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+.faq-sec .row {
+  gap: 0 !important;
+  margin: 0;
+}
+
+.faq-sec-style-one .ekwa-faq-answer {
+  padding-right: 50px;
+}
+
+.faq-sec-style-two .ekwa-faq-answer {
+  padding-left: 50px;
+}
+
+.faq-sec figure {
+  margin: 0;
+}
+
+.faq-sec figure img {
+  border-radius: 10px;
+}
+
+.faq-sec h2 {
+  margin: 0px auto;
+  position: relative;
+  margin-bottom: 20px;
+
+}
+
+.style-one{
+background: #0080000d;
+}
+.style-one .ekwa-faq-section {
+    padding-right: 50px;
+}
+.style-two .ekwa-faq-section {
+    padding-left: 50px;
+}
+
+.inner-page h1 {
+  text-align: center;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.p_number {
+  color: var(--color_one);
+  font-weight: 700;
+}
+
+.p_number:hover {
+  font-weight: 400;
+}
+
+.ol-list li {
+  margin-bottom: 20px;
+}
+
+.chatprompt {
+  right: 10px !important;
+}
+.skip-link {
+    position: absolute !important;
+    left: 10px !important;
+    top: -100px !important;
+    background: #000 !important;
+    color: #fff !important;
+    padding: 12px 18px !important;
+    z-index: 999999 !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.skip-link:focus,
+.skip-link:active,
+.skip-link:focus-visible {
+    top: 10px !important;
+    left: 10px !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    outline: 2px solid #fff !important;
+}
+
+@media screen and (min-width: 767px) {
+  body.ekwa-body {
+    font-family: var(--font-OpenSans-semicondensed-regular);
+    font-weight: var(--body_variant);
+    font-style: var(--body_style);
+  }
+
+  .ekwa-body h1 {
+   font-family: var(--font-play-fair-display-regular);
+    font-weight: 400;
+    font-style: var(--heading_h1_style);
+  }
+
+  .ekwa-body h2 {
+  font-family: var(--font-play-fair-display-regular);
+    font-weight: 400;
+    font-style: var(--heading_h2_style);
+  }
+
+  .ekwa-body h3 {
+  font-family: var(--font-play-fair-display-regular);
+    font-weight: var(--heading_h3_variant);
+    font-style: var(--heading_h3_style);
+  }
+
+  .btn {
+ font-family: var(--font-OpenSans-semicondensed-regular);
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hide-from-mobile {
+    display: block;
+  }
+}
+
+.img-fluid,
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2.ekwa-section-heading {
+  text-align: center;
+}
+
+.home-page p {
+  line-height: 30px;
+}
+
+h2,
+h1 {
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.inner-page {
+    padding-top: 160px;
+    padding-bottom: 60px;
+}
+
+@media screen and (min-width: 767px) {
+  .inner-page-banner {
+    font-family: var(--heading_h1);
+  }
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.img-right {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.img-left {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+  margin-left: 0 !important;
+}
+
+.player-wrap .player .playicon:before {
+  color: #074984 !important;
+}
+
+.no-gutter.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+  margin-left: 0 !important;
+}
+
+@media screen and (max-width: 1600px) {
+
+  .home-page h1,
+  .home-page h2,
+  .inner-page h1,
+  .inner-page h2 {
+    line-height: 1.1;
+    font-size: 40px !important;
+
+  }
+
+
+}
+
+@media screen and (max-width: 1200px) {
+  .btn {
+    font-size: 13px;
+  }
+
+  .home-page h1,
+  .home-page h2,
+  .inner-page h1,
+  .inner-page h2{
+    line-height: 1.1;
+    font-size: 33px !important;
+    font-weight: 400 !important;
+  }
+}
+
+@media screen and (max-width: 1032px) {
+    .btn {
+    font-size: 12px;
+  }
+
+  .header-main-wrap {
+    display: none;
+  }
+
+  .faq-sec-style-one .ekwa-faq-answer {
+    padding-right: 25px;
+  }
+
+  .faq-sec-style-two .ekwa-faq-answer {
+    padding-left: 25px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .style-one figure{
+           padding-bottom: 20px;
+  }
+ 
+  .wp-col-lg.wp-block-columns {
+    display: block;
+  }
+ 
+  .wp-col-lg.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+    margin-left: 0 !important;
+  }
+
+  .faq-sec {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+.style-one .ekwa-faq-section {
+    padding-right: 0px;
+}
+.style-two .ekwa-faq-section {
+    padding-left: 0px;
+}
+
+  .style-one .row {
+    flex-direction: column;
+  }
+
+  .style-two .row {
+    flex-direction: column-reverse;
+  }
+
+  .faq-sec .row {
+    flex-wrap: wrap !important;
+  }
+.style-two figure{
+    padding-bottom: 0px;
+}
+  .faq-sec figure {
+    margin: 0;
+
+    padding-top: 20px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .home-page h1,
+  .home-page h2,
+  .inner-page h1,
+  .inner-page h2,
+  .blog-single .blog-content h2,
+  .blog-role h1 {
+    line-height: 1.3;
+    font-size: 22px !important;
+
+  }
+
+  .home-page p,
+  .inner-page p,
+  .inner-list li,
+  .inner-page li,
+  .blog-single p {
+    font-size: 17px;
+  }
+
+  .inner-page {
+    padding-top: 100px;
+  }
+
+  .inner-starting {
+    margin-bottom: 50px;
+  }
+
+  .faq-sec {
+    padding: 30px 0;
+  }
+  
+}
+
+:root{
+  --font-brush-script-mt:"Brush Script MT";
+  --font-play-fair-display-regular:"PlayfairDisplay Regular";
+  --font-open-sans-regular:"Open Sans Regular";
+  --font-OpenSans-semicondensed-regular:"OpenSans SemiCondensed Regular";
+  --font-Tartuffo-Light:"Tartuffo-Light";
+  --font-Open-Sans-Semi-Bold:"Open Sans Semi Bold";
+}
+
+
+
+
+
+
+
+
+
+
