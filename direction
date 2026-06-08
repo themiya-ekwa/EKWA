@@ -1,0 +1,69 @@
+<?php
+$block_id = $block['id'];
+
+if ( !empty($block['anchor']) ) {
+    $block_id = $block['anchor'];
+}
+
+if ( get_field('custom_id') ) {
+    $block_id = get_field('custom_id');
+}
+
+$mode = 'icon';
+
+if ( get_field('mode') ) {
+    $mode = get_field('mode');
+}
+
+$className = 'address_direction_link';
+
+if ( !empty($block['className']) ) {
+    $className .= ' ' . $block['className'];
+}
+
+$text_color = '#000';
+
+if ( get_field('color')['text_color'] ) {
+    $text_color = get_field('color')['text_color'];
+}
+
+$icon_color = '#000';
+
+if ( get_field('color')['icon_color'] ) {
+    $icon_color = get_field('color')['icon_color'];
+}
+
+$location = 1;
+
+if ( get_field('location') ) {
+    $location = get_field('location');
+}
+?>
+
+<a class="<?php echo esc_attr($className); ?> <?php if ( $mode == 'icon' ) { echo 'btn direction_ico_btn'; } ?>" 
+id="<?php echo esc_attr($block_id); ?>"
+target="_blank" rel="noreferrer nofollow" href="<?php echo esc_url(get_location('direction', $location)); ?>">
+    <i class="fas fa-map-marker-alt"></i>
+
+    <?php if ( $mode == 'text' ): ?>
+        <span class="direction_text">Directions</span>
+    <?php endif; ?>
+
+    <?php 
+    if ( $mode == 'address' ) {
+        echo get_address($location);
+    }
+    ?>
+</a>
+
+<style>
+    <?php if ( $mode == 'address' || $mode == 'text' ): ?>
+        #<?php echo esc_attr($block_id); ?> {
+            color: <?php echo esc_html($text_color); ?>;
+        }
+
+        #<?php echo esc_attr($block_id); ?> i {
+            color: <?php echo esc_html($icon_color); ?>;
+        }
+    <?php endif; ?>
+</style>
