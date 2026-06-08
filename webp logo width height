@@ -1,0 +1,13 @@
+  if($type == 'webp'){
+	
+	if ( function_exists( 'the_custom_logo' ) ) {
+		  $custom_logo_id = get_theme_mod( 'custom_logo' ); 
+		  $logo_desktop = wp_get_attachment_image_src( $custom_logo_id , 'full' ); 
+		}
+	$logo = get_theme_mod('mobile_logo_webp');
+	echo '<picture>
+		  <source srcset="'.$logo.'" type="image/webp">
+		  <img width="'.$logo_desktop[1].'" height="'.$logo_desktop[2].'" src="'.$logo_desktop[0].'" alt="'.$practise_name.'">
+	</picture>';
+	
+  }
