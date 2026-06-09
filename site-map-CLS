@@ -1,0 +1,38 @@
+<script>
+document.documentElement.className += ' js';
+</script>
+ .js #tree ul {
+  display: none;
+}
+
+.js #tree li.collapsable > ul,
+.js #tree li.open > ul,
+.js #tree li.active-parent > ul {
+  display: block;
+}
+
+.js #tree ul {
+  display: none;
+}
+.js #tree li.collapsable > ul,
+.js #tree li.open > ul,
+.js #tree li.active-parent > ul {
+  display: block;
+}
+.js #tree ul {
+  display: none;
+}
+.js #tree li.collapsable > ul,
+.js #tree li.open > ul,
+.js #tree li.active-parent > ul {
+  display: block;
+}
+.js #tree ul {
+display: none;
+}
+
+.js #tree li.collapsable > ul,
+.js #tree li.open > ul,
+.js #tree li.active-parent > ul {
+display: block;
+}
