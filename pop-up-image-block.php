@@ -19,6 +19,7 @@ if (!empty($align)) {
 $fall_back_image = get_field('fall_back_image');
 $fancy_image = get_field('fancy_image');
 $above_the_fold = get_field('above_the_fold');
+$enable_popup = get_field('enable_popup');
 
 // If no fancy image is selected, use fallback image for Fancybox
 $fancybox_image = !empty($fancy_image['url']) ? $fancy_image : $fall_back_image;
@@ -27,9 +28,11 @@ $fancybox_image = !empty($fancy_image['url']) ? $fancy_image : $fall_back_image;
 <?php if (!empty($fall_back_image['url'])): ?>
     <div id="<?php echo esc_attr($block_id); ?>" class="<?php echo esc_attr($className); ?>">
 
-        <a class="gallery-item"
-           data-fancybox="gallery" 
-           href="<?php echo esc_url($fancybox_image['url']); ?>">
+        <?php if ($enable_popup): ?>
+            <a class="gallery-item"
+               data-fancybox="gallery" 
+               href="<?php echo esc_url($fancybox_image['url']); ?>">
+        <?php endif; ?>
 
             <img 
                 width="<?php echo esc_attr($fall_back_image['width']); ?>" 
@@ -45,7 +48,9 @@ $fancybox_image = !empty($fancy_image['url']) ? $fancy_image : $fall_back_image;
                     class="lazyload"
                 <?php endif; ?>>
 
-        </a>
+        <?php if ($enable_popup): ?>
+            </a>
+        <?php endif; ?>
 
     </div>
 <?php endif; ?>
