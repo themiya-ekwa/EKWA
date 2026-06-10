@@ -79,3 +79,12 @@ $fancybox_image = !empty($fancy_image['url']) ? $fancy_image : $fall_back_image;
     text-align: center;
 }
 </style>
+
+
+| Field Label    | Field Name        |   Field Type | Required | Purpose                             |
+| -------------- | ----------------- | -----------: | -------: | ----------------------------------- |
+| Fallback Image | `fall_back_image` |        Image |      Yes | Main image displayed on the page    |
+| Fancy Image    | `fancy_image`     |        Image |       No | Larger/popup image used in Fancybox |
+| Above the Fold | `above_the_fold`  | True / False |       No | Controls image loading behavior     |
+| Enable Popup   | `enable_popup`    | True / False |       No | Turns Fancybox popup on or off      |
+
