@@ -18,6 +18,7 @@ if (!empty($align)) {
 
 $fall_back_image = get_field('fall_back_image');
 $fancy_image = get_field('fancy_image');
+$above_the_fold = get_field('above_the_fold');
 
 // If no fancy image is selected, use fallback image for Fancybox
 $fancybox_image = !empty($fancy_image['url']) ? $fancy_image : $fall_back_image;
@@ -36,8 +37,13 @@ $fancybox_image = !empty($fancy_image['url']) ? $fancy_image : $fall_back_image;
                 src="<?php echo esc_url($fall_back_image['url']); ?>" 
                 alt="<?php echo esc_attr($fall_back_image['alt'] ?? ''); ?>" 
                 decoding="async"
-                loading="lazy"
-                class="lazyload">
+                <?php if ($above_the_fold): ?>
+                    loading="eager"
+                    fetchpriority="high"
+                <?php else: ?>
+                    loading="lazy"
+                    class="lazyload"
+                <?php endif; ?>>
 
         </a>
 
